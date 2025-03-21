@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Bbi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-size: 50px; /* Chữ lớn, dễ đọc */
+            background: url('https://i.imgur.com/6Iej2c3.jpg') no-repeat center center/cover; /* Hình nền lofi chill */
+            color: #ffffff; /* Màu chữ trắng để nổi bật */
+            font-family: 'Dancing Script', cursive; /* Font chữ cách điệu */
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+            user-select: none;
+            padding: 40px;
+            width: 90%;
+            max-width: 900px;
+            background-color: rgba(0, 0, 0, 0.4); /* Lớp phủ tối giúp chữ nổi bật */
+            border-radius: 20px;
+            transition: opacity 0.5s ease-in-out; /* Hiệu ứng mờ dần khi thay đổi */
+        }
+
+        .fade-out {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const texts = [
+            "Chào em, bbi",
+            "Em biết không...",
+            "Cứ mỗi lần anh thấy mình ngu lắm rồi ấy",
+            "thì anh lại phát hiện ra một cái ngu mới của bản thân",
+            "nghe tệ nhỉ:((",
+            "anh đã nhận ra anh sai ở đâu rồi TT",
+            "Anh nhớ em lắm, anh xin lỗi bbi của anh nhiều",
+            "Chúc em một ngày yên bình nhé, anh yêu em nhiều <3"
+        ];
+
+        let index = 0;
+        document.body.innerText = texts[index];
+
+        document.body.addEventListener("click", () => {
+            document.body.classList.add("fade-out"); // Làm mờ trước khi đổi text
+            setTimeout(() => {
+                index = (index + 1) % texts.length;
+                document.body.innerText = texts[index];
+                document.body.classList.remove("fade-out"); // Hiện lại text mới
+            }, 500); // Trễ 0.5s để hiệu ứng mượt
+        });
+    </script>
+</body>
+</html>
